@@ -28,5 +28,11 @@ namespace ElmaProjesi.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        public IActionResult Help()
+        {
+            return View();
+        }
+
     }
 }
