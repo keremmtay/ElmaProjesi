@@ -1,16 +1,18 @@
 ﻿@{
+    
     ViewData["Title"] = "Home Page";
 }
 <div class="col-md-12">
     <div class="row">
         @for (int i = 0; i < 15; i++)
         {
-            <div class="col-md-4">
-                <partial name="_Trends" />
-            </div>
+        <div class="col-md-4">
+            <partial name="_Trends" />
+        </div>
         }
         <section class="border-top" style="height: 100px">
             <partial name="_Panel1" />
         </section>
+
     </div>
 </div>
