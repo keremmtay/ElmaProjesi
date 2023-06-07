@@ -9,5 +9,7 @@ namespace ElmaProjesi.DataAccessLayer.Abstract
 {
     public interface IFilterRepository:IRepository<Filter>
     {
+        void DeleteFilterFromSubCategories(int filterId, int subCategoriesId);
+        SubCategory GetByIdWithSubCategories(int filterId);
     }
 }
