@@ -31,26 +31,42 @@ namespace ElmaProjesi.DataAccessLayer.Concrete
                 new SubCategory() {Name="Dükkan Temizliği", Url="dukkan-temizligi", ImageUrl="dukkan-temizligi.jpg", Filters = new List<Filter>(){ new Filter() { Question="Temizlenecek dükkan kaç metrekare?" }, new Filter() { Question="Hangi sıklıkla temizlenmesini istiyorsun?" }, new Filter() { Question="Temizliğe neler dahil olsun?" }, new Filter() { Question="Ayrıntılar" }, new Filter() { Question="Adres" }, new Filter() { Question="Tarih" }}}
                 } },
             new Category() {Name="Tadilat", Url="tadilat", ImageUrl="tadilat.jpg", SubCategories=new List<SubCategory>(){
-                new SubCategory() {Name="Boya Badana", Url="boya-badana", ImageUrl="boya-badana.jpg"},
-                new SubCategory() {Name="Ev Tadilat", Url="ev-tadilat", ImageUrl="ev-tadilat.jpg"},
-                new SubCategory() {Name="Mutfak Dolabı Yapımı", Url="mutfak-dolabi-yapimi", ImageUrl="mutfak-dolabi-yapimi.jpg"},
-                new SubCategory() {Name="Cam Balkon", Url="cam-balkon", ImageUrl="cam-balkon.jpg"},
-                new SubCategory() {Name="Fayans Döşeme", Url="fayans-doseme", ImageUrl="fayans-doseme.jpg"},
-                new SubCategory() {Name="Banyo Tadilatı", Url="banyo-tadilatı", ImageUrl="banyo-tadilatı.jpg"},
-                new SubCategory() {Name="Anahtar Teslim İnşaat", Url="anahtar-teslim-insaat", ImageUrl="anahtar-teslim-insaat.jpg"},
-                new SubCategory() {Name="Parke Laminant Döşeme", Url="parke-laminant-doseme", ImageUrl="parke-laminant-doseme.jpg"},
-                new SubCategory() {Name="Deprem Testi", Url="deprem-testi", ImageUrl="deprem-testi.jpg"},
-                new SubCategory() {Name="Mantolama", Url="mantolama", ImageUrl="mantolama.jpg"},
-                new SubCategory() {Name="Duşakabin", Url="dusakabın", ImageUrl="dusakabın.jpg"},
-                new SubCategory() {Name="Anahtar Teslim Tadilat", Url="anahtar-teslim-tadilat", ImageUrl="anahtar-teslim-tadilat.jpg"},
-                new SubCategory() {Name="Prefabrik Ev Yapımı", Url="prefabrik-ev-yapimi", ImageUrl="prefabrik-ev-yapimi.jpg"},
-                new SubCategory() {Name="Alçıpan Asma Tavan", Url="alcipan-asma-tavan", ImageUrl="alcipan-asma-tavan.jpg"},
-                new SubCategory() {Name="Koltuk Döşeme", Url="koltuk-doseme", ImageUrl="koltuk-doseme.jpg"},
-                new SubCategory() {Name="İç Mimar", Url="ic-mimar", ImageUrl="ic-mimar.jpg"},
-                new SubCategory() {Name="Mutfak Tadilat", Url="mutfak-tadilat", ImageUrl="mutfak-tadilat.jpg"},
-                new SubCategory() {Name="Havuz Yapımı", Url="havuz-yapimi", ImageUrl="havuz-yapimi.jpg"},
-                new SubCategory() {Name="Gardrop Yapımı", Url="gardrop-yapimi", ImageUrl="gardrop-yapimi.jpg"},
-                new SubCategory() {Name="İç Mimari Çizim", Url="ic-mimar-cizim", ImageUrl="ic-mimar-cizim.jpg"}
+                new SubCategory() {Name="Boya Badana", Url="boya-badana", ImageUrl="boya-badana.jpg",Filters = new List<Filter>(){ new Filter() { Question= "Kaç metrekare oda/ev boyanacak?" }, new Filter() { Question = "Bu alan kaç oda?" }, new Filter() { Question = "Fiyata malzeme dahil olsun mu?" }, new Filter() { Question = "Boya badana yapılacak alan eşyalı mı?" }, new Filter() { Question = "Tavanlar Boyanacak mı?" }, new Filter() { Question = "Boyacı başka neyi bilmeli?" }, new Filter() { Question = "Nerede boya badana yapılacak il, ilçe ,mahalle" }, new Filter() { Question = "Ne zaman?" }, } },
+                new SubCategory() {Name="Ev Tadilat", Url="ev-tadilat", ImageUrl="ev-tadilat.jpg",Filters = new List<Filter>(){ new Filter() { Question= "Ne yapılması Gerekiyor?" }, new Filter() { Question= "Ne yapılmasını istiyorsun?" },new Filter() { Question= "Hangi tadilat yapılacak" },new Filter() { Question= "Kaç metre kare" },new Filter() { Question= "Nerde?" },new Filter() { Question= "Ne zaman?" }, }},
+                new SubCategory() {Name="Mutfak Dolabı Yapımı", Url="mutfak-dolabi-yapimi", ImageUrl="mutfak-dolabi-yapimi.jpg", Filters = new List<Filter>(){ new Filter() { Question= "Hangi tip Mutfak dolabı yapımı istiyorsunuz?" },new Filter() { Question= "Toplam dolap uzunluğu kaç metre olacak?" },new Filter() { Question= "Kapak kaplaması için malzeme tercihi var mı?" },new Filter() { Question= "Dolap gövdesi için malzeme tercihi var mı?" },new Filter() { Question= "İhtiyaç detayları nelerdir?" },new Filter() { Question= "Nerde?" },new Filter() { Question= "Ne zaman?" }, }},
+                new SubCategory() {Name="Cam Balkon", Url="cam-balkon", ImageUrl="cam-balkon.jpg" , Filters = new List<Filter>(){ new Filter() { Question= "Cam Balkon sistemi nasıl olsun" }, new Filter() { Question= "Balkon cam ile kapatılacak kenar uzunluğu çevresi kaç metre?" },new Filter() { Question= "Cam yüksekliği kaç metre olacak?" },new Filter() { Question= "Balkon şekli nasıl? (Kaç cephe kapatılacak?)" }, new Filter() { Question= "Cam tercihi var mı?" },new Filter() { Question= "İhtiyaç detayları nelerdir?" },new Filter() { Question= "Nerde ?" },new Filter() { Question= "Ne zaman?" }, }},
+
+                new SubCategory() {Name="Fayans Döşeme", Url="fayans-doseme", ImageUrl="fayans-doseme.jpg",Filters = new List<Filter>(){ new Filter() { Question= "Fayans Döşenecek alan kaç metrekare?" }, new Filter() { Question= "Fayans döşeme dışında başka bir iş var mı?" }, new Filter() { Question= "Fiyata fayans malzemesi dahil olsun mu?" }, new Filter() { Question= "Kırılacak mevcut fayans var mı*" }, new Filter() { Question= "İhtiyaç detayları nelerdir?" }, new Filter() { Question= "Nerde ?" }, new Filter() { Question= "Ne zaman?" } }},
+
+                new SubCategory() {Name="Banyo Tadilatı", Url="banyo-tadilatı", ImageUrl="banyo-tadilatı.jpg" ,Filters = new List<Filter>(){ new Filter() { Question= "Ne yapılmasını istiyorsunuz?" }, new Filter() { Question= "Banyoda hangi tadilat yapılacak" },new Filter() { Question= "Kaç metre banyo alanı tadilat Yapılacak?" }, new Filter() { Question= "Fiyata malzeme dahil olsun mu?" },new Filter() { Question= "İhtiyaç detayları nelerdir?" },new Filter() { Question= "Nerde ?" },new Filter() { Question= "Ne zaman?" },}},
+
+                new SubCategory() {Name="Anahtar Teslim İnşaat", Url="anahtar-teslim-insaat", ImageUrl="anahtar-teslim-insaat.jpg", Filters = new List < Filter >() { new Filter() { Question = "Kaç kat inşa edilecek?" }, new Filter() { Question = "Binada kaç daire olacak" }, new Filter() { Question = "Proje çizimleri hazır mı?" }, new Filter() { Question = "Ödeme tercihiniz nedir" }, new Filter() { Question = "Bina tipi yapı malzemesi ne olacak?" }, new Filter() { Question = "Malzeme kalitesi tercihi var mı?" }, new Filter() { Question = "Bina taban alanı kaç metrekare?" }, new Filter() { Question = "Arsa ne durumda?" }, new Filter() { Question = "Arsanın imar izni var mı?" }, new Filter() { Question = "Proje detayları neler?" }, new Filter() { Question = "Nerde?" }, new Filter() { Question = "Ne zaman?" }, }},
+
+                new SubCategory() {Name="Parke Laminant Döşeme", Url="parke-laminant-doseme", ImageUrl="parke-laminant-doseme.jpg", Filters = new List < Filter >() { new Filter() { Question = "Parke döşenecek alan kaç metrekare?" }, new Filter() { Question = "Fiyata malzeme dahil olsun mu?" }, new Filter() { Question = "Parke döşeme haricinde yaptırmak istediğiniz başka işlem var mı?" }, new Filter() { Question = "Parke döşencek alan eşyalı mı olacak?" }, new Filter() { Question = "İhtiyaç detayları nelerdir?" }, new Filter() { Question = "Nerde?" }, new Filter() { Question = "Ne zaman?" }, }},
+
+                new SubCategory() {Name="Deprem Testi", Url="deprem-testi", ImageUrl="deprem-testi.jpg", Filters = new List < Filter >() { new Filter() { Question = "Kaç adet bina/blok için deprem testi yapılacak?" },  new Filter() { Question = "binalar kaç katlı" },  new Filter() { Question = "Bina zemin oturum alanı kaç metrekare?" },  new Filter() { Question = "İhtiyacın detayları neler?" },  new Filter() { Question = "Nerde?" }, new Filter() { Question = "Ne zaman?" }, }},
+
+                new SubCategory() {Name="Mantolama", Url="mantolama", ImageUrl="mantolama.jpg", Filters = new List < Filter >() { new Filter() { Question = "Mantolama yapılacak bina kaç katlı?" }, new Filter() { Question = "Bina uzun cephesi kaç metre? (kat metrekare hesabı için)" },new Filter() { Question = "Kısa cephesi kaç metre?" },new Filter() { Question = "Bu özelliklerden hangileri isteniyor?" },new Filter() { Question = "Malzeme markası tercihi var mı?" }, new Filter() { Question = "Balkon tipi nedir?" }, new Filter() { Question = "İhtiyacın detayları neler?" },  new Filter() { Question = "Nerde?" }, new Filter() { Question = "Ne zaman?" }, }},
+
+                new SubCategory() {Name="Duşakabin", Url="dusakabın", ImageUrl="dusakabın.jpg", Filters = new List < Filter >() { new Filter() { Question = "Neye ihtiyacın var?" },new Filter() { Question = "Kaç adet duşakabin?" },new Filter() { Question = "Duşakabin ölçüleri ne kadar?" },new Filter() { Question = "Montajı yapılacak duşakabin tipi nedir?" },new Filter() { Question = "Eski duşakabin sökülecek mi?" }, new Filter() { Question = "İhtiyacın detayları neler?" },  new Filter() { Question = "Nerde?" }, new Filter() { Question = "Ne zaman?" },}},
+
+                new SubCategory() {Name="Anahtar Teslim Tadilat", Url="anahtar-teslim-tadilat", ImageUrl="anahtar-teslim-tadilat.jpg", Filters = new List < Filter >() { new Filter() { Question = "Hangisine ihtiyacınız var?" },new Filter() { Question = "Tadilat yapılacak alan kaç metrekare?" },new Filter() { Question = "Hangi tadilat işleri yapılacak?" },new Filter() { Question = "Hangi odalarda tadilat yapılacak?" },new Filter() { Question = "Bütçe yaklaşık kaç TL?" },new Filter() { Question = "Malzeme kalitesi tercihi var mı?" },new Filter() { Question = "İhtiyacın detayları neler?" },  new Filter() { Question = "Nerde?" }, new Filter() { Question = "Ne zaman?" } }},
+
+                new SubCategory() {Name="Prefabrik Ev Yapımı", Url="prefabrik-ev-yapimi", ImageUrl="prefabrik-ev-yapimi.jpg", Filters = new List < Filter >() { new Filter() { Question = "Büyüklüğü kaç metrekare olmalı?" },new Filter() { Question = "Kaç katlı olacak?" },new Filter() { Question = "Subasman yapımı (temel betonu) fiyata dahil olsun mu?" },new Filter() { Question = "Prefabrik evi yapacak firma başka neleri bilmeli?" }, new Filter() { Question = "Nerde?" }, new Filter() { Question = "Ne zaman?" } }},
+
+                new SubCategory() {Name="Alçıpan Asma Tavan", Url="alcipan-asma-tavan", ImageUrl="alcipan-asma-tavan.jpg", Filters = new List < Filter >() { new Filter() { Question = "Toplam kaç metrekare asma tavan yapılacak?" }, new Filter() { Question = "Hangi ekstra hizmetler yapılacak?" }, new Filter() { Question = "Fiyata malzeme dahil olsun mu?" }, new Filter() { Question = "İhtiyacın detayları neler?" }, new Filter() { Question = "Nerde?" }, new Filter() { Question = "Ne zaman?" }  }},
+
+                new SubCategory() {Name="Koltuk Döşeme", Url="koltuk-doseme", ImageUrl="koltuk-doseme.jpg", Filters = new List < Filter >() { new Filter() { Question = "Hangi tip koltuk döşeme istiyorsun?" }, new Filter() { Question = "Kaç adet L koltuk kaplanacak?" },new Filter() { Question = "Nasıl bir döşeme istiyorsun?" },new Filter() { Question = "Kaç adet yastık veya kırlent?" },new Filter() { Question = "Fotoğraf ekleme kister misin?" }, new Filter() { Question = "Nerde?" }, new Filter() { Question = "Ne zaman?" } }},
+
+                new SubCategory() {Name="İç Mimar", Url="ic-mimar", ImageUrl="ic-mimar.jpg", Filters = new List < Filter >() { new Filter() { Question = "İç mimarlık yapılacak mekan neresi?" }, new Filter() { Question = "Ne yapılması gerekiyor?" },new Filter() { Question = "İç mimarlık gereken alan kaç metrekare?" },new Filter() { Question = "Hangi tadilat işleri yapılacak?" },new Filter() { Question = "Malzeme kalitesi tercihi var mı?" },new Filter() { Question = "Bütçe yaklaşık kaç TL?" },new Filter() { Question = "Keşif için ne zaman uygun olur?" },new Filter() { Question = "İhtiyacın detayları neler?" },  new Filter() { Question = "Nerde?" }, new Filter() { Question = "Ne zaman?" }}},
+
+                new SubCategory() {Name="Mutfak Tadilat", Url="mutfak-tadilat", ImageUrl="mutfak-tadilat.jpg", Filters = new List < Filter >() { new Filter() { Question = "Ne yapılmasını istiyorsun?" }, new Filter() { Question = "Boyanacak dolap(lar) kaç kapaklı?" },new Filter() { Question = "Boyanacak dolap(lar)ın toplam uzunluğu kaç metre?" }, new Filter() { Question = "İhtiyacın detayları neler?" },  new Filter() { Question = "Nerde?" }, new Filter() { Question = "Ne zaman?" } }},
+
+                new SubCategory() {Name="Havuz Yapımı", Url="havuz-yapimi", ImageUrl="havuz-yapimi.jpg", Filters = new List < Filter >() { new Filter() { Question = "Ne tür bir havuz istiyorsun?" }, new Filter() { Question = "Havuz boyu (uzun kenarı) kaç metre olacak?" },new Filter() { Question = "Havuz eni (kısa kenarı) kaç metre olacak?" },new Filter() { Question = "Havuz derinliği kaç metre olacak?" },new Filter() { Question = "Fiyata hafriyat dahil olsun mu?" },new Filter() { Question = "İstediğin yüzme havuzunun detayları neler?" }, new Filter() { Question = "Nerde?" }, new Filter() { Question = "Ne zaman?" } }},
+
+                new SubCategory() {Name="Gardrop Yapımı", Url="gardrop-yapimi", ImageUrl="gardrop-yapimi.jpg", Filters = new List < Filter >() { new Filter() { Question = "Yaptırmak istediğin gardrobun genişliği (eni) kaç cm olacak?" }, new Filter() { Question = "Yüksekliği (boyu) kaç cm?" }, new Filter() { Question = "Derinliği kaç cm?" },new Filter() { Question = "Gardrop kapısı tipi tercihiniz nedir?" },  new Filter() { Question = "İhtiyacın detayları neler?" },  new Filter() { Question = "Nerde?" }, new Filter() { Question = "Ne zaman?" }}},
+
+                new SubCategory() {Name="İç Mimari Çizim", Url="ic-mimar-cizim", ImageUrl="ic-mimar-cizim.jpg", Filters = new List < Filter >() { new Filter() { Question = "Çizimi yapılacak proje nedir?" }, new Filter() { Question = "Çizimi yapılacak proje alanı kaç metrekare?" },    new Filter() { Question = "İhtiyacın detayları neler?" },  new Filter() { Question = "Nerde?" }, new Filter() { Question = "Ne zaman?" }}}
                 } },
             new Category() {Name="Nakliyat",Url="nakliyat", ImageUrl="nakliyat.jpg",SubCategories=new List<SubCategory>(){
                  new SubCategory() { Name = "Evden Eve Nakliyat", Url = "evden-eve-nakliyat", ImageUrl = "evden-eve-nakliyat.jpg", Filters = new List < Filter >() { new Filter() { Question = "Kaç odali ev taşınacak?" }, new Filter() { Question= "Kaç kat taşınacak ?" }, new Filter() { Question= "Eski ev nerede?" }, new Filter() { Question= "Yeni ev nerede?" }, new Filter() { Question= "Ne zaman ?" }, new Filter() { Question= "Açıklama" } }},
@@ -87,28 +103,203 @@ namespace ElmaProjesi.DataAccessLayer.Concrete
                 new SubCategory() { Name = "Perde Korniş Takma", Url = "perde-kornis-takma", ImageUrl = "perde-kornis-takma.jpg", Filters = new List < Filter >() { new Filter() { Question = "Kaç adet takılacak?" },new Filter() { Question= "Toplam kaç metre korniş takılacak?" },new Filter() { Question= "Nereye takılacak?" }, new Filter() { Question= "Detaylarını yazın." } }},
                 } },
             new Category() {Name="Özel Ders", Url="ozel-ders", ImageUrl="ozel-ders.jpg", SubCategories=new List<SubCategory>(){
-                new SubCategory() {Name="Direksiyon Dersi", Url="direksiyon-dersi", ImageUrl="direksiyon-dersi.jpg", Filters = new List < Filter >() { new Filter() { Question = "" } }},
-                new SubCategory() {Name="Online İngilizce Özel Ders", Url="online-ingilizce-ozel-ders", ImageUrl="online-ingilizce-ozel-ders.jpg"},
-                new SubCategory() {Name="İngilizce Özel Ders", Url="ingilizce-ozel-ders", ImageUrl="ingilizce-ozel-ders.jpg"},
-                new SubCategory() {Name="İlkokul Özel Ders", Url="ilkokul-ozel-ders", ImageUrl="ilkokul-ozel-ders.jpg"},
-                new SubCategory() {Name="Ortaokul Matematk Özel Ders", Url="ortaokul-matematik-ozel-ders", ImageUrl="ortaokul-matematik-ozel-ders.jpg"},
-                new SubCategory() {Name="Yüzme Dersi", Url="yuzme-dersi", ImageUrl="yuzme-dersi.jpg"},
-                new SubCategory() {Name="Piyano Dersi", Url="piyano-dersi", ImageUrl="piyano-dersi.jpg"},
-                new SubCategory() {Name="Tenis Dersi", Url="tenis-dersi", ImageUrl="tenis-dersi.jpg"},
-                new SubCategory() {Name="TYT AYT Matematik Özel Ders", Url="tyt-ayt-matematik-ozel-ders", ImageUrl="tyt-ayt-matematik-ozel-ders.jpg"},
-                new SubCategory() {Name="Personal Trainer", Url="personal-trainer", ImageUrl="personal-trainer.jpg"},
-                new SubCategory() {Name="Online Almanca Özel Ders", Url="online-almanca-ozel-ders", ImageUrl="online-almanca-ozel-ders.jpg"},
-                new SubCategory() {Name="Lise Matematik Özel Ders", Url="lise-matematik-ozel-ders", ImageUrl="lise-matematik-ozel-ders.jpg"},
-                new SubCategory() {Name="Online Öğrenci Koçu", Url="online-ogrenci-kocu", ImageUrl="online-ogrenci-kocu.jpg"},
-                new SubCategory() {Name="LGS Matematik Özel Ders", Url="lgs-matematik-ozel-ders", ImageUrl="lgs-matematik-ozel-ders.jpg"},
-                new SubCategory() {Name="Pilates Dersi", Url="pilates-dersi", ImageUrl="pilates-dersi.jpg"},
-                new SubCategory() {Name="İlkokul Matemarik Özel Ders", Url="ilkokul-matematik-ozel-ders", ImageUrl="ilkokul-matematik-ozel-ders.jpg"},
-                new SubCategory() {Name="Gitar Dersi", Url="gitar-dersi", ImageUrl="gitar-dersi.jpg"},
-                new SubCategory() {Name="Online Ortaokul Matematik Özel Ders", Url="online-ortaokul-matematik-ozel-ders", ImageUrl="online-ortaokul-matematik-ozel-ders.jpg"},
-                new SubCategory() {Name="Keman Dersi", Url="keman-dersi", ImageUrl="keman-dersi.jpg"},
-                new SubCategory() {Name="Şan Dersi", Url="san-dersi", ImageUrl="san-dersi.jpg"}
+                new SubCategory() {Name="Direksiyon Dersi", Url="direksiyon-dersi", ImageUrl="direksiyon-dersi.jpg",
+                    Filters = new List<Filter>() {
+                        new Filter() {Question="Eğitmen aracı ile"},
+                        new Filter() {Question="Kendi aracım ile"},
+                        new Filter() {Question="Eğitmenin cinsiyet tercihi"},
+                        new Filter() {Question="Ehliyetin var mı"},
+                        new Filter() {Question="Vites tercihin"},
+                        new Filter() {Question="Hangi sıklıkta ay/hafta"},
+                        new Filter() {Question="Eğitmenin dikkat etmesi gereken detaylar"},
+                        new Filter() {Question="Hizmetin verileceği yer"}
+                    }} ,
+                new SubCategory() {Name="Online İngilizce Özel Ders", Url="online-ingilizce-ozel-ders", ImageUrl="online-ingilizce-ozel-ders.jpg",
+                    Filters = new List<Filter>()
+                    {
+                        new Filter() {Question="Dersi alacak kişi okula gidiyor mu"},
+                        new Filter() {Question="Amacı nedir(TOFL, YDS) vs"},
+                        new Filter() {Question="Hangi seviyede"},
+                        new Filter() {Question="Hangi sıklıkta ay/hafta"},
+                        new Filter() {Question="Eğitmenin dikkat etmesi gereken detaylar"}
+                    }},
+                new SubCategory() {Name="İngilizce Özel Ders", Url="ingilizce-ozel-ders", ImageUrl="ingilizce-ozel-ders.jpg",
+                Filters = new List<Filter>()
+                {
+                    new Filter() {Question="Dersin yapılacağı yer(zoom/ev)"},
+                    new Filter() {Question="Dersi alacak kişi okula gidiyor mu"},
+                    new Filter() {Question="Amacı nedir(TOFL, YDS) vs"},
+                    new Filter() {Question="Hangi seviyede"},
+                    new Filter() {Question="Hangi sıklıkta ay/hafta"},
+                    new Filter() {Question="Eğitmenin dikkat etmesi gereken detaylar"}
+                }},
+                new SubCategory() {Name="İlkokul Özel Ders", Url="ilkokul-ozel-ders", ImageUrl="ilkokul-ozel-ders.jpg",
+                    Filters = new List<Filter>()
+                    {
+                        new Filter() {Question="Dersin yapılacağı yer(zoom/ev)"},
+                        new Filter() {Question="Hangi derslerde özel ders almak istiyorsun"},
+                        new Filter() {Question="Hangi sıklıkta ay/hafta"},
+                        new Filter() {Question="Kaçıncı sınıf öğrencisi ders almak istiyorsun"},
+                        new Filter() {Question="ne kadar süre"},
+                        new Filter() {Question="Eğitmenin dikkat etmesi gereken detaylar"}
+                    }},
+                new SubCategory() {Name="Ortaokul Matematk Özel Ders", Url="ortaokul-matematik-ozel-ders", ImageUrl="ortaokul-matematik-ozel-ders.jpg",
+                    Filters = new List<Filter>()
+                    {
+                        new Filter() {Question="Dersin yapılacağı yer(zoom/ev)"},
+                        new Filter() {Question="Hangi sıklıkta ay/hafta"},
+                        new Filter() {Question="Dersi alacak kişi kaçıncı sınıfa gidiyor"},
+                        new Filter() {Question="Ne kadar süre"},
+                        new Filter() {Question="Eğitmenin dikkat etmesi gereken detaylar"}
+                    }},
+                new SubCategory() {Name="Yüzme Dersi", Url="yuzme-dersi", ImageUrl="yuzme-dersi.jpg",
+                    Filters = new List<Filter>()
+                    {
+                        new Filter() {Question="Ders nerde yapılsın(eğitmenin yerinde veya benim önerdiğim yerde)"},
+                        new Filter() {Question="Yüzme eğitmeninin cinsiyet tercihi"},
+                        new Filter() {Question="Dersi alacak kişi(ler) kaç yaşında"},
+                        new Filter() {Question="Yüzme dersini hangi amaçla almak istiyorsun(yarışma için, kendim için vs)"},
+                        new Filter() {Question="Hangi sıklıkta ay/hafta"},
+                        new Filter() {Question="Eğitmenin dikkat etmesi gereken detaylar"}
+                    }},
+                new SubCategory() {Name="Piyano Dersi", Url="piyano-dersi", ImageUrl="piyano-dersi.jpg",
+                    Filters = new List<Filter>()
+                    {
+                        new Filter() {Question="Ders nerede yapılsın(zoom/ev)"},
+                        new Filter() {Question="Dersi alacak kişi(ler) kaç yaşında"},
+                        new Filter() {Question="Hangi sıklıkta ay/hafta"},
+                        new Filter() {Question="Eğitmenin dikkat etmesi gereken detaylar"}
+                    }},
+                new SubCategory() {Name="Tenis Dersi", Url="tenis-dersi", ImageUrl="tenis-dersi.jpg",
+                    Filters= new List<Filter>()
+                    {
+                        new Filter() {Question="Ders nerede yapılsın"},
+                        new Filter() {Question="Ders alacak kişi(ler) kaç yaşında"},
+                        new Filter() {Question="Hangi sıklıkta ay/hafta"},
+                        new Filter() {Question="Eğitmenin dikkat etmesi gereken detaylar"}
+                    }},
+                new SubCategory() {Name="TYT AYT Matematik Özel Ders", Url="tyt-ayt-matematik-ozel-ders", ImageUrl="tyt-ayt-matematik-ozel-ders.jpg",
+                    Filters = new List<Filter>()
+                    {
+                        new Filter() {Question="Ders nerede yapılsın(zoom/ev)"},
+                        new Filter() {Question="Hangi sıklıkta ay/hafta"},
+                        new Filter() {Question="Dersi alacak kişi kaçıncı sınıfa gidiyor"},
+                        new Filter() {Question="Ne kadar süre"},
+                        new Filter() {Question="Eğitmenin dikkat etmesi gereken detaylar"}
+                    }},
+                new SubCategory() {Name="Personal Trainer", Url="personal-trainer", ImageUrl="personal-trainer.jpg",
+                    Filters = new List<Filter>()
+                    {
+                        new Filter() {Question="Ders nerede yapılsın(zoom/ev)"},
+                        new Filter() {Question="Personel trainer cinsiyet tercihi"},
+                        new Filter() {Question="Hangi sıklıkta ay/hafta"},
+                        new Filter() {Question="Fitness yapma hedefin nedir"},
+                        new Filter() {Question="İhtiyacının detayları neler"}
+                    }},
+                new SubCategory() {Name="Online Almanca Özel Ders", Url="online-almanca-ozel-ders", ImageUrl="online-almanca-ozel-ders.jpg",
+                    Filters = new List<Filter>()
+                    {
+                        new Filter() {Question="Ders alacak kişi okula gidiyor mu"},
+                        new Filter() {Question="Hangi seviyede"},
+                        new Filter() {Question="Amacı nedir(TOFL,YDS) vs"},
+                        new Filter() {Question="Hangi sıklıkta ay/hafta"},
+                        new Filter() {Question="Eğitmenin dikkat etmesi gereken detaylar"}
+                    }},
+                new SubCategory() {Name="Lise Matematik Özel Ders", Url="lise-matematik-ozel-ders", ImageUrl="lise-matematik-ozel-ders.jpg",
+                    Filters = new List<Filter>()
+                    {
+                        new Filter() {Question="Dersin yapılacağı yer(zoom/ev)"},
+                        new Filter() {Question="Hangi sıklıkta ay/hafta"},
+                        new Filter() {Question="Dersi alacak kişi kaçıncı sınıfa gidiyor"},
+                        new Filter() {Question="Ne kadar süre"},
+                        new Filter() {Question="Eğitmenin dikkat etmesi gereken detaylar"}
+                    }},
+                new SubCategory() {Name="Online Öğrenci Koçu", Url="online-ogrenci-kocu", ImageUrl="online-ogrenci-kocu.jpg",
+                    Filters = new List<Filter>()
+                    {
+                        new Filter() {Question="Hangi konuda destek istiyorsun"},
+                        new Filter() {Question="Hangi sıklıkta görüşmek istiyorsun"},
+                        new Filter() {Question="Ne kadar süre"},
+                        new Filter() {Question="Eğitmenin dikkat etmesi gereken detaylar"}
+                    }},
+                new SubCategory() {Name="LGS Matematik Özel Ders", Url="lgs-matematik-ozel-ders", ImageUrl="lgs-matematik-ozel-ders.jpg",
+                    Filters = new List<Filter>()
+                    {
+                        new Filter() {Question="Dersin yapılacağı yer(zoom/ev)"},
+                        new Filter() {Question="Hangi sıklıkta ay/hafta"},
+                        new Filter() {Question="Dersi alacak kişi kaçıncı sınıfa gidiyor"},
+                        new Filter() {Question="Ne kadar süre"},
+                        new Filter() {Question="Eğitmenin dikkat etmesi gereken detaylar"}
+                    }},
+                new SubCategory() {Name="Pilates Dersi", Url="pilates-dersi", ImageUrl="pilates-dersi.jpg",
+                    Filters= new List<Filter>()
+                    {
+                        new Filter() {Question="Dersin yapılacğı yer(zoom/ev)"},
+                        new Filter() {Question="Hangi tür pilates ile ilgileniyorsun"},
+                        new Filter() {Question="Pilates ile ilgili hedefin ne"},
+                        new Filter() {Question="Hangi sıklıkta ay/hafta"},
+                        new Filter() {Question="Eğitmenin dikkat etmesi gereken detaylar"}
+                    }},
+                new SubCategory() {Name="İlkokul Matemarik Özel Ders", Url="ilkokul-matematik-ozel-ders", ImageUrl="ilkokul-matematik-ozel-ders.jpg",
+                    Filters = new List<Filter>()
+                    {
+                        new Filter() {Question="Dersin yapılacağı yer(zoom/yer)"},
+                        new Filter() {Question="Hangi sıklıkta ay/hafta"},
+                        new Filter() {Question="Dersi alacak kişi kaçıncı sınıfta"},
+                        new Filter() {Question="Ne kadar süre"},
+                        new Filter() {Question="Eğitmenin dikkat etmesi gereken detaylar"}
+                    }},
+                new SubCategory() {Name="Gitar Dersi", Url="gitar-dersi", ImageUrl="gitar-dersi.jpg",
+                    Filters = new List<Filter>()
+                    {
+                        new Filter() {Question="Ders nerede yapılsın(zoom/ev)"},
+                        new Filter() {Question="Hangi tür gitarda ders almak istiyorsun"},
+                        new Filter() {Question="Dersi alacak kişi kaç yaşında"},
+                        new Filter() {Question="Hangi sıklıkta ay/hafta"},
+                        new Filter() {Question="Dersi nasıl almak istiyorsun(birebir veya grup)"},
+                        new Filter() {Question="Eğitmenin dikkat etmesi gereken detaylar"}
+                    }},
+                new SubCategory() {Name="Online Ortaokul Matematik Özel Ders", Url="online-ortaokul-matematik-ozel-ders", ImageUrl="online-ortaokul-matematik-ozel-ders.jpg",
+                    Filters = new List<Filter>()
+                    {
+                        new Filter() {Question="Hangi sıklıkta ay/hafta"},
+                        new Filter() {Question="Dersi alacak kişi kaçınxı sınıfa gidiyor"},
+                        new Filter() {Question="Ne kadar süre"},
+                        new Filter() {Question="Eğitmenin dikkat etmesi gereken detaylar"}
+                    }},
+
+                new SubCategory() {Name="Keman Dersi", Url="keman-dersi", ImageUrl="keman-dersi.jpg",
+                    Filters = new List<Filter>()
+                    {
+                        new Filter() {Question="Ders nerde yapılsın(zoom/ev)"},
+                        new Filter() {Question="Dersi alacak kişi kaç yaşında"},
+                        new Filter() {Question="Keman var mı"},
+                        new Filter() {Question="Hangi sıklıkta ay/hafta"},
+                        new Filter() {Question="Eğitmenin dikkat etmesi gereken detaylar"}
+                    }},
+                new SubCategory() {Name="Şan Dersi", Url="san-dersi", ImageUrl="san-dersi.jpg",
+                    Filters = new List<Filter>()
+                    {
+                        new Filter() {Question="Ders nerede yapılsın(zoom/ev)"},
+                        new Filter() {Question="Ne amaçla alıyorsun(profesyonel, hobi)"},
+                        new Filter() {Question="Hangi sıklıkta ay/hafta"},
+                        new Filter() {Question="Eğitmenin dikkat etmesi gereken detaylar"}
+                    }
+                }
                 } },
-            new Category() {Name="Sağlık", Url="saglik", ImageUrl="saglik.jpg"},
+            new Category() {Name="Sağlık", Url="saglik", ImageUrl="saglik.jpg", SubCategories=new List<SubCategory>(){
+                new SubCategory() { Name = "Psikolog", Url = "psikolog", ImageUrl = "psikolog.jpg", Filters = new List<Filter>(){ new Filter() { Question= "Nasıl Görüşmek İstersiniz?" }, new Filter() { Question= "Hangi konuda destek almak istiyorsunuz?" }, new Filter() { Question= "Yaşınız?" }, new Filter() { Question= "Daha önce destek aldınız mı?" }, new Filter() { Question= "detayları yazınız." }, } },
+                new SubCategory() { Name = "Diyetisyen", Url = "diyetisyen", ImageUrl = "diyetisyen.jpg", Filters = new List<Filter>(){ new Filter() { Question= "Nasıl Görüşmek İstersiniz?" },new Filter() { Question= "Hangi konuda destek istiyorsunuz?" },new Filter() { Question= "Kaç yaşındasınız?" },new Filter() { Question= "detayları yazınız." }, }},
+                new SubCategory() { Name = "Personel Trainer", Url = "personel-trainer", ImageUrl = "personel-trainer.jpg", Filters = new List<Filter>(){ new Filter() { Question= "Nasıl görüşmek istersiniz?" },new Filter() { Question= "Eğitmen tercihiniz?" },new Filter() { Question= "Hedefiniz nedir?" },new Filter() { Question= "Hangi sıklıkla?" },new Filter() { Question= "detayları yazınız." }, }},
+                new SubCategory() { Name = "Masaj(Erkek İçin)", Url = "masaj-erkek-icin", ImageUrl = "masaj-erkek-icin.jpg", Filters = new List<Filter>(){ new Filter() { Question= "Masaj tercihiniz?" }, new Filter() { Question = "Masör tercihiniz?" }, new Filter() { Question = "Kaç dakika istersiniz?" }, new Filter() { Question = "Nerede?" }, new Filter() { Question = "Hangi sıklıkla?" }, new Filter() { Question = "detayları yazınız." }, } },
+                new SubCategory() { Name = "Fizyoterapist", Url = "fizyoterapist", ImageUrl = "fizyoterapist.jpg", Filters = new List<Filter>(){ new Filter() { Question= "Hangi bölge için?" },new Filter() { Question= "Nerede?" },new Filter() { Question= "Ne kadar süre ihtiyacınız var?" },new Filter() { Question= "detayları yazınız." }, }},
+                new SubCategory() { Name = "Dil ve Konuşma Terapisi", Url = "dil-ve-konusma-terapisi", ImageUrl = "dil-ve-konusma-terapisi.jpg", Filters = new List<Filter>(){ new Filter() { Question= "Nerede?" }, new Filter() { Question= "Hangi konuda destek istiyorsunuz?" },new Filter() { Question= "Kaç yaşında?" },new Filter() { Question= "detayları yazınız." }, }},
+                new SubCategory() { Name = "Çocuk Bakımı ve Ev Yardımcısı", Url = "cocuk-bakimi-ve-ev-yardimcisi", ImageUrl = "cocuk-bakimi-ve-ev-yardimcisi.jpg", Filters = new List<Filter>(){ new Filter() { Question= "Ne ihtiyacınız var?" },new Filter() { Question= "Kaç gün istiyorsunuz?" },new Filter() { Question= "detayları yazınız." },}},
+                new SubCategory() { Name = "Epilasyon", Url = "epilasyon", ImageUrl = "epilasyon.jpg", Filters = new List<Filter>(){ new Filter() { Question= "hangi bölge?" }, new Filter() { Question= "kaç seans?" },new Filter() { Question= "detayları yazınız." }, }},
+                new SubCategory() { Name = "Epilasyon", Url = "epilasyon", ImageUrl = "epilasyon.jpg", Filters = new List<Filter>(){ new Filter() { Question= "hangi bölge?" },new Filter() { Question= "detayları yazınız." }, }},
+                 new SubCategory() { Name = "Dövme", Url = "dovme", ImageUrl = "dovme.jpg", Filters = new List<Filter>(){ new Filter() { Question= "hangi bölge?" },new Filter() { Question= "detayları yazınız." }, }},
+                 new SubCategory() { Name = "Yaşlı Bakımı", Url = "yasli-bakimi", ImageUrl = "yasli-bakimi.jpg", Filters = new List<Filter>(){ new Filter() { Question= "nerede?" },new Filter() { Question= "kaç gün?" }, }},
+            } },
             new Category() {Name="Organizasyon", Url="organizasyon", ImageUrl="organizasyon.jpg", SubCategories=new List<SubCategory>(){
                 new SubCategory() {Name="Nişan Organizasyon ", Url="nisan-organizasyon", ImageUrl="nisan-organizasyon.jpg", Filters = new List<Filter>(){ new Filter() { Question="Nasıl bir nişan organizasyonu istiyorsunuz?" }, new Filter() { Question="Davetli sayısı nedir?" }, new Filter() { Question="Hangi hizmetleri istersin?" }, new Filter() { Question="Ayrıntılar" }, new Filter() { Question="Adres" }, new Filter() { Question="Tarih" }}},
                 new SubCategory() {Name="Catering", Url="catering", ImageUrl="catering.jpg", Filters = new List<Filter>(){ new Filter() { Question="Ne için catering istiyorsunuz?" }, new Filter() { Question= "Kaç kişilik?" }, new Filter() { Question= "Hangi öğün(ler)?" }, new Filter() { Question = "Kaç çeşit yemek?" }, new Filter() { Question="Ayrıntılar" }, new Filter() { Question="Adres" }, new Filter() { Question="Tarih" }}},
