@@ -1,3 +1,4 @@
+using ElmaProjesi.DataAccessLayer.Concrete;
 using ElmaProjesi.WebUI.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -12,7 +13,7 @@ namespace ElmaProjesi
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-            builder.Services.AddDbContext<ApplicationContext>(option => option.UseSqlServer("Server=203-UGURCAN;Database=ElmaProject;Integrated Security=true"));
+            builder.Services.AddDbContext<ApplicationContext>(option => option.UseSqlServer("Server=DESKTOP-TUMHS1A\\NA;Database=ElmaProject;Integrated Security=true"));
             builder.Services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<ApplicationContext>().AddDefaultTokenProviders();
             //4- Veritabaný tablolarýný oluþturduktan sonra Identity ile ilgili bir takým özelliklerin konfigürasyonunu aþaðýdaki gibi yapabiliriz.
             builder.Services.Configure<IdentityOptions>(options =>
@@ -44,6 +45,11 @@ namespace ElmaProjesi
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+            else
+            {
+                MyInitialData.Seed();
+            }
+
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
@@ -61,7 +67,7 @@ namespace ElmaProjesi
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Home}/{action=Help}/{id?}");
 
             app.Run();
         }
