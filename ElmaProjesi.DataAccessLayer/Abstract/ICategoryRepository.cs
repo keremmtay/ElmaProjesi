@@ -9,5 +9,7 @@ namespace ElmaProjesi.DataAccessLayer.Abstract
 {
     public interface ICategoryRepository: IRepository<Category>
     {
+        void DeleteSubCategoriesFromCategory(int subCategoriesId, int categoryId);
+        Category GetByIdWithSubCategories( int categoryId);
     }
 }

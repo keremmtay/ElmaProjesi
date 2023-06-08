@@ -1,4 +1,5 @@
 ﻿using ElmaProjesi.BusinessLayer.Abstract;
+using ElmaProjesi.DataAccessLayer.Abstract;
 using ElmaProjesi.EntityLayer;
 using System;
 using System.Collections.Generic;
@@ -10,46 +11,46 @@ namespace ElmaProjesi.BusinessLayer.Concrete
 {
     public class SubCategoryManager : ISubCategoryService
     {
-        ISubCategoryService _subCategoryService;
+        ISubCategoryRepository _subCategoryRepository;
 
-        public SubCategoryManager(ISubCategoryService subCategoryService)
+        public SubCategoryManager(ISubCategoryRepository subCategoryRepository)
         {
-            _subCategoryService = subCategoryService;
+            _subCategoryRepository= subCategoryRepository;
         }
 
         public void Create(SubCategory subCategory)
         {
-           _subCategoryService.Create(subCategory);
+           _subCategoryRepository.Create(subCategory);
         }
 
         public void Delete(SubCategory subCategory)
         {
-           _subCategoryService.Delete(subCategory);
+           _subCategoryRepository.Delete(subCategory);
         }
 
-        public void DeleteServiceFromSubCategories(int serviceId, int subCategoriesId)
+        public void DeleteFilterFromSubCategories(int filterId, int subCategoriesId)
         {
-            _subCategoryService.DeleteServiceFromSubCategories(serviceId,subCategoriesId);
+            _subCategoryRepository.DeleteFilterFromSubCategories(filterId,subCategoriesId);
         }
 
         public List<SubCategory> GetAll()
         {
-           return _subCategoryService.GetAll();
+           return _subCategoryRepository.GetAll();
         }
 
         public SubCategory GetById(int id)
         {
-           return _subCategoryService.GetById(id);
+           return _subCategoryRepository.GetById(id);
         }
 
         public SubCategory GetByIdWithService(int subCategoryId)
         {
-            return _subCategoryService.GetByIdWithService(subCategoryId);
+            return _subCategoryRepository.GetByIdWithService(subCategoryId);
         }
 
         public void Update(SubCategory subCategory)
         {
-            _subCategoryService.Update(subCategory);
+            _subCategoryRepository.Update(subCategory);
         }
     }
 }

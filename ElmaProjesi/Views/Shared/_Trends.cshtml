@@ -1,12 +1,31 @@
-﻿<div class="row justify-content-center">
-        <div class="card m-2 table-hover" style="width: 18rem;">
-            <img src="/images/temizlik.jpg" class="card-img-top bg-image hover-zoom" alt="temizlik">
-            <div class="card-body">
-                <h6 class="card-header-pills text-success text-center">Boş Ev Temizliği</h6>
-                <hr />
-                <p class="card-text opacity-25 "><i class="bi bi-person-fill"></i> 5.000 profosyonel</p>
-                <p class="card-text opacity-25"><i class="bi bi-star-fill"></i> 5.000 Onaylı Yorum</p>
+﻿
+<link rel="stylesheet" type="text/css" href="~/css/_Trend.css" />
+
+
+
+<script>
+    var card = document.querySelector(".card");
+
+    card.addEventListener("mouseover", function () {
+        this.style.transform = "scale(0.9)";
+    });
+
+    card.addEventListener("mouseout", function () {
+        this.style.transform = "scale(1)";
+    });
+</script>
+
+<div class="row justify-content-center">
+    <div class="card m-2 table-hover" style="width: 18rem;">
+        <img src="/images/temizlik.jpg" class="card-img-top bg-image hover-zoom" alt="temizlik">
+        <div class="card-body">
+            <h6 class="card-header-pills text-success text-center">Boş Ev Temizliği</h6>
+            <hr />
+            <p class="card-text opacity-25 "><i class="bi bi-person-fill"></i> 5.000 profesyonel</p>
+            <p class="card-text opacity-25"><i class="bi bi-star-fill"></i> 5.000 Onaylı Yorum</p>
+            <div class="hidden-text">
+                <a href="#" class="btn btn-success btn-lg btn-sm mb-2">TEKLİF AL</a>
             </div>
-            <a href="#" class="btn btn-success btn-sm mb-2">TEKLİF AL</a>
         </div>
+    </div>
 </div>
