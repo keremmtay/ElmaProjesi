@@ -15,7 +15,7 @@ namespace ElmaProjesi.DataAccessLayer.Concrete
         public DbSet<Filter> Filters { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=203-UGURCAN;Database=ElmaProject;Integrated Security=true");
+            optionsBuilder.UseSqlServer("Server=203-ERGUN\\NA;Database=ElmaProject;Integrated Security=true");
         }
 
       

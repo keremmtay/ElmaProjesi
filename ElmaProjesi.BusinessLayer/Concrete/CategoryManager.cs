@@ -1,4 +1,5 @@
 ﻿using ElmaProjesi.BusinessLayer.Abstract;
+using ElmaProjesi.DataAccessLayer.Abstract;
 using ElmaProjesi.EntityLayer;
 using System;
 using System.Collections.Generic;
@@ -10,46 +11,46 @@ namespace ElmaProjesi.BusinessLayer.Concrete
 {
     public class CategoryManager : ICategoryService
     {
-        ICategoryService _categoryService;
+        ICategoryRepository _categoryRepository;
 
-        public CategoryManager(ICategoryService categoryService)
+        public CategoryManager(ICategoryRepository categoryRepository)
         {
-            _categoryService = categoryService;
+            _categoryRepository=categoryRepository;
         }
 
         public void Create(Category category)
         {
-            _categoryService.Create(category);
+            _categoryRepository.Create(category);
         }
 
         public void Delete(Category category)
         {
-            _categoryService.Delete(category);
+            _categoryRepository.Delete(category);
         }
 
         public void DeleteSubCategoriesFromCategory(int subCategoriesId, int categoryId)
         {
-            _categoryService.DeleteSubCategoriesFromCategory(subCategoriesId, categoryId);
+            _categoryRepository.DeleteSubCategoriesFromCategory(subCategoriesId, categoryId);
         }
 
         public List<Category> GetAll()
         {
-            return _categoryService.GetAll();
+            return _categoryRepository.GetAll();
         }
 
         public Category GetById(int id)
         {
-          return _categoryService.GetById(id);
+          return _categoryRepository.GetById(id);
         }
 
         public Category GetByIdWithSubCategories(int categoryId)
         {
-            return _categoryService.GetByIdWithSubCategories(categoryId);
+            return _categoryRepository.GetByIdWithSubCategories(categoryId);
         }
 
         public void Update(Category category)
         {
-            _categoryService.Update(category);
+            _categoryRepository.Update(category);
         }
     }
 }
