@@ -1,4 +1,5 @@
 ﻿using ElmaProjesi.BusinessLayer.Abstract;
+using ElmaProjesi.DataAccessLayer.Abstract;
 using ElmaProjesi.EntityLayer;
 using System;
 using System.Collections.Generic;
@@ -10,46 +11,46 @@ namespace ElmaProjesi.BusinessLayer.Concrete
 {
     public class FilterManager : IFilterService
     {
-        IFilterService _filterService;
+        IFilterRepository _filterRepository;
 
-        public FilterManager(IFilterService filterService)
+        public FilterManager(IFilterRepository filterRepository)
         {
-            _filterService = filterService;
+            _filterRepository = filterRepository;
         }
 
         public void Create(Filter filter)
         {
-            _filterService.Create(filter);
+            _filterRepository.Create(filter);
         }
 
         public void Delete(Filter filter)
         {
-            _filterService.Delete(filter);
+            _filterRepository.Delete(filter);
         }
 
         public void DeleteFilterFromSubCategories(int filterId, int subCategoriesId)
         {
-            _filterService.DeleteFilterFromSubCategories(filterId,subCategoriesId);
+            _filterRepository.DeleteFilterFromSubCategories(filterId,subCategoriesId);
         }
 
         public List<Filter> GetAll()
         {
-            return _filterService.GetAll();
+            return _filterRepository.GetAll();
         }
 
         public Filter GetById(int id)
         {
-            return _filterService.GetById(id);
+            return _filterRepository.GetById(id);
         }
 
         public SubCategory GetByIdWithSubCategories(int filterId)
         {
-           return _filterService.GetByIdWithSubCategories(filterId);
+           return _filterRepository.GetByIdWithSubCategories(filterId);
         }
 
         public void Update(Filter filter)
         {
-            _filterService.Update(filter);
+            _filterRepository.Update(filter);
         }
     }
 }

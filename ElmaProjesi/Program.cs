@@ -60,6 +60,12 @@ namespace ElmaProjesi
             app.UseAuthorization();
 
             app.MapControllerRoute(
+                name: "categories",
+                pattern: "/categories",
+                defaults: new {controller = "Category", action = "Index"}
+                );
+
+            app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
 
