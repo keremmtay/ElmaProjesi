@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace ElmaProjesi.DataAccessLayer.Abstract
 {
-    public interface ISubCategoryRepository: IRepository<SubCategory>
+    public interface ISubCategoryRepository : IRepository<SubCategory>
     {
-       void DeleteFilterFromSubCategories(int filterId, int subCategoriesId);
+        void DeleteFilterFromSubCategories(int filterId, int subCategoriesId);
         SubCategory GetByIdWithService(int subCategoryId);
+        List<SubCategory> GetBySubCategoriesByCategoryUrl(string category);
     }
 }

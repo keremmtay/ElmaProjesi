@@ -1,4 +1,6 @@
-﻿using ElmaProjesi.Models;
+﻿using ElmaProjesi.DataAccessLayer.Abstract;
+using ElmaProjesi.EntityLayer;
+using ElmaProjesi.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -6,11 +8,12 @@ namespace ElmaProjesi.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        ISubCategoryRepository _subCategoryRepository;
+        public HomeController(ISubCategoryRepository subCategoryRepository)
         {
-            _logger = logger;
+
+            _subCategoryRepository = subCategoryRepository;
         }
 
         public IActionResult Index()
@@ -33,10 +36,18 @@ namespace ElmaProjesi.Controllers
         {
             return View();
         }
+        public IActionResult List(string category)
+        {
+            return View("SubCategories", _subCategoryRepository.GetBySubCategoriesByCategoryUrl(category));
+        }
         public IActionResult GiveService() 
         {
             return View();
         }
 
+        public IActionResult TeklifAlModal(string category)
+        {
+            return View();
+        }
     }
 }
