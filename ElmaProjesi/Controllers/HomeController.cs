@@ -40,6 +40,10 @@ namespace ElmaProjesi.Controllers
         {
             return View("SubCategories", _subCategoryRepository.GetBySubCategoriesByCategoryUrl(category));
         }
+        public IActionResult GiveService() 
+        {
+            return View();
+        }
 
         public IActionResult TeklifAlModal(string category)
         {

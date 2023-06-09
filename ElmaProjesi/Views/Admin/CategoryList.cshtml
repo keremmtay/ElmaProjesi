@@ -1,0 +1,64 @@
+﻿@model CategoryListViewModel
+
+
+@{
+    Layout = "_LayoutAdmin";
+}
+
+<nav class="navbar">
+    <div class="container margin:1px">
+        <a class="navbar">
+            <img style="height:70px; width:70px" src="/images/Elma.jpg" alt="" />
+
+        </a>
+
+    </div>
+</nav>
+
+<h1>Admin</h1>
+
+<h4>Kategoriler</h4>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <a href="/admin/categorycreate" class="btn btn-primary btn-sm"> Kategori Ekle </a>
+        <table class="table table-bordered mt-3">
+            <thead>
+                <tr class="fw-bold text-center">
+                    <td style="width:30px">Id</td>
+                    <td>Kategori Adı</td>
+                    <td>Url</td>
+                    <td style="width:300px"> </td>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Categories.Count() > 0)
+                {
+                    @foreach (var category in Model.Categories)
+                    {
+                        <tr class="text-center">
+                            <td>@category.Id</td>
+                            <td>@category.Name</td>
+                            <td>@category.Url</td>                            
+                            <td>
+                                <a href="/admin/categoryedit/@category.Id" class="btn btn-warning btn-sm"><i class="bi bi-pencil-fill"></i> Güncelle</a>
+                                <a href="/admin/GetSubCategoriesByCategoryId/@category.Id" class="btn btn-success btn-sm"><i class="bi bi-pencil-fill"></i> Alt Kategoriler</a>
+                                <form action="/admin/categorydelete" method="post">
+                                    <input type="hidden" name="Id" value="@category.Id" />
+                                    <button style="display:inline;" type="submit" class="btn btn-danger btn-sm"><i class="bi bi-trash3-fill"></i> Sil</button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <div class="alert alert-warning">
+                        <h3>Listelenecek kategori bulunamadı.</h3>
+                    </div>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>

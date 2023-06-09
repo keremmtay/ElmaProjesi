@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using ElmaProjesi.EntityLayer;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace ElmaProjesi.EntityLayer
+namespace ElmaProjesi.WebUI.Models
 {
-    public class Category
+    public class CategoryModel
     {
         public int Id { get; set; }
 
