@@ -13,7 +13,7 @@ namespace ElmaProjesi
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-            builder.Services.AddDbContext<ApplicationContext>(option => option.UseSqlServer("Server=DESKTOP-TUMHS1A\\NA;Database=ElmaProject;Integrated Security=true"));
+            builder.Services.AddDbContext<ApplicationContext>(option => option.UseSqlServer("Server=203-Semih\\na;Database=ElmaProject;Integrated Security=true"));
             builder.Services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<ApplicationContext>().AddDefaultTokenProviders();
             //4- Veritabaný tablolarýný oluþturduktan sonra Identity ile ilgili bir takým özelliklerin konfigürasyonunu aþaðýdaki gibi yapabiliriz.
             builder.Services.Configure<IdentityOptions>(options =>
@@ -59,6 +59,19 @@ namespace ElmaProjesi
             app.UseAuthentication();
             app.UseAuthorization();
 
+
+            app.MapControllerRoute(
+    name: "admin",
+    pattern: "admin",
+    defaults: new { controller = "Admin", action = "Admin" }
+    );
+
+            app.MapControllerRoute(
+   name: "admin",
+   pattern: "admin",
+   defaults: new { controller = "Admin", action = "AdminCategoryList" }
+   );
+
             app.MapControllerRoute(
                 name: "categories",
                 pattern: "/categories",
@@ -67,7 +80,7 @@ namespace ElmaProjesi
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Help}/{id?}");
+                pattern: "{controller=Home}/{action=Index}/{id?}");
 
             app.Run();
         }
