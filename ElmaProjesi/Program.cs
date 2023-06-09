@@ -13,7 +13,7 @@ namespace ElmaProjesi
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-            builder.Services.AddDbContext<ApplicationContext>(option => option.UseSqlServer("Server=DESKTOP-TUMHS1A\\NA;Database=ElmaProject;Integrated Security=true"));
+            builder.Services.AddDbContext<ApplicationContext>(option => option.UseSqlServer("Server=DESKTOP-G7DTBEQ;Database=ElmaProject;Integrated Security=true"));
             builder.Services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<ApplicationContext>().AddDefaultTokenProviders();
             //4- Veritabaný tablolarýný oluþturduktan sonra Identity ile ilgili bir takým özelliklerin konfigürasyonunu aþaðýdaki gibi yapabiliriz.
             builder.Services.Configure<IdentityOptions>(options =>
