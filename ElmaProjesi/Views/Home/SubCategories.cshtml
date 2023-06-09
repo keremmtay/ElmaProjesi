@@ -1,0 +1,42 @@
+﻿<link rel="stylesheet" type="text/css" href="~/css/_Trend.css" />
+
+<style>
+    .card {
+        margin-bottom: 20px; /* Aralarındaki boşluğu ayarlamak için */
+    }
+</style>
+
+<script>
+    var cards = document.querySelectorAll(".card");
+
+    cards.forEach(function (card) {
+        card.addEventListener("mouseover", function () {
+            this.style.transform = "scale(0.9)";
+        });
+
+        card.addEventListener("mouseout", function () {
+            this.style.transform = "scale(1)";
+        });
+    });
+</script>
+
+<div class="row">
+    @foreach (var cat in Model)
+    {
+        <div class="col-md-3">
+            <div class="card m-2 table-hover" style="width: 18rem;">
+                <img src="~/images/@cat.ImageUrl" class="card-img-top bg-image hover-zoom" alt="@cat.Name">
+                <div class="card-body">
+                    <h6 class="card-header-pills text-success text-center">@cat.Name</h6>
+                    <hr />
+                    <p class="card-text opacity-25 "><i class="bi bi-person-fill"></i> 5.000 profesyonel</p>
+                    <p class="card-text opacity-25"><i class="bi bi-star-fill"></i> 5.000 Onaylı Yorum</p>
+                    <div class="hidden-text">
+                        <button class="btn btn-success btn-lg btn-sm mb-2" data-bs-target="#teklifAl" data-bs-toggle="modal">Teklif Al</button>
+                        @*<a href="#" class="btn btn-success btn-lg btn-sm mb-2">TEKLİF AL</a>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

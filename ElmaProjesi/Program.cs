@@ -1,3 +1,6 @@
+using ElmaProjesi.BusinessLayer.Abstract;
+using ElmaProjesi.BusinessLayer.Concrete;
+using ElmaProjesi.DataAccessLayer.Abstract;
 using ElmaProjesi.DataAccessLayer.Concrete;
 using ElmaProjesi.WebUI.Identity;
 using Microsoft.AspNetCore.Identity;
@@ -13,7 +16,7 @@ namespace ElmaProjesi
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-            builder.Services.AddDbContext<ApplicationContext>(option => option.UseSqlServer("Server=DESKTOP-TUMHS1A\\NA;Database=ElmaProject;Integrated Security=true"));
+            builder.Services.AddDbContext<ApplicationContext>(option => option.UseSqlServer("Server=haftaicisabahci;Database=ElmaProject;Integrated Security=true"));
             builder.Services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<ApplicationContext>().AddDefaultTokenProviders();
             //4- Veritabaný tablolarýný oluþturduktan sonra Identity ile ilgili bir takým özelliklerin konfigürasyonunu aþaðýdaki gibi yapabiliriz.
             builder.Services.Configure<IdentityOptions>(options =>
@@ -35,7 +38,8 @@ namespace ElmaProjesi
                 options.SignIn.RequireConfirmedPhoneNumber = false; // True olursa telefon bilgisi için onay ister
 
             });
-
+            builder.Services.AddScoped<ISubCategoryRepository, SubCategoryRepository>();
+            builder.Services.AddScoped<ISubCategoryService, SubCategoryManager>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -67,7 +71,7 @@ namespace ElmaProjesi
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Help}/{id?}");
+                pattern: "{controller=Home}/{action=Index}/{id?}");
 
             app.Run();
         }

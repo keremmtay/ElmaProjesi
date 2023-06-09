@@ -15,6 +15,7 @@ namespace ElmaProjesi.BusinessLayer.Abstract
         void Update(SubCategory subCategory);
         void Delete(SubCategory subCategory);
         SubCategory GetByIdWithService(int subCategoryId);
-        void DeleteFilterFromSubCategories(int filterId,int subCategoriesId);
+        void DeleteFilterFromSubCategories(int filterId, int subCategoriesId);
+        List<SubCategory> GetBySubCategoriesByCategoryUrl(string category);
     }
 }
