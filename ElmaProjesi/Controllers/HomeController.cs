@@ -33,6 +33,10 @@ namespace ElmaProjesi.Controllers
         {
             return View();
         }
+        public IActionResult GiveService() 
+        {
+            return View();
+        }
 
     }
 }

@@ -97,4 +97,12 @@ body {
     align-items: center;
     width: 50%;
 }
+.container {
+    margin: 150px auto;
+}
 
+.tbsearchbar {
+    padding-left: 10px;
+    color: red;
+    //To add some color.
+}
