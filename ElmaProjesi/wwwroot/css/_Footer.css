@@ -1,0 +1,19 @@
+﻿.footer-container,
+.footer-container a {
+    color: #FFFFFF;
+}
+
+.footer-list {
+    list-style-type: none; /* Noktaları kaldırır */
+    padding-inline-start: 0; /* Li elemanları için boşluk kaldırır */
+}
+
+.footer-title {
+    margin: 20px auto;
+    text-align: center;
+}
+
+    .footer-title h5 {
+        font-size: 8px;
+        margin: 0;
+    }
