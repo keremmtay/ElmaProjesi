@@ -17,43 +17,43 @@ namespace ElmaProjesi
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-            builder.Services.AddDbContext<ApplicationContext>(option => option.UseSqlServer("Server=DESKTOP-TUMHS1A\\NA;Database=ElmaProject;Integrated Security=true"));
+            builder.Services.AddDbContext<ApplicationContext>(option => option.UseSqlServer("Server=haftaicisabahci;Database=ElmaProject;Integrated Security=true"));
             builder.Services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<ApplicationContext>().AddDefaultTokenProviders();
 
             builder.Services.Configure<IdentityOptions>(options =>
             {
                 // password
-                options.Password.RequireDigit = true;   // password^de mutlaka sayısal bir değer olmalı.
-                options.Password.RequireLowercase = true; //password'de mutlaka küçük harf olmalı.
-                options.Password.RequireUppercase = true;   // password'de mutlaka büyük harf olmalı.
-                options.Password.RequiredLength = 6;    // password en az 6 karakter olmalı.
-                options.Password.RequireNonAlphanumeric = true; // rakam ve harf dışında farklı bir karakterin de password içinde olması gerekiyor. Örn: nokta gibi, @ gibi, %,-,_ gibi karakterler...
+                options.Password.RequireDigit = true;   // password^de mutlaka sayÃ½sal bir deÃ°er olmalÃ½.
+                options.Password.RequireLowercase = true; //password'de mutlaka kÃ¼Ã§Ã¼k harf olmalÃ½.
+                options.Password.RequireUppercase = true;   // password'de mutlaka bÃ¼yÃ¼k harf olmalÃ½.
+                options.Password.RequiredLength = 6;    // password en az 6 karakter olmalÃ½.
+                options.Password.RequireNonAlphanumeric = true; // rakam ve harf dÃ½Ã¾Ã½nda farklÃ½ bir karakterin de password iÃ§inde olmasÃ½ gerekiyor. Ã–rn: nokta gibi, @ gibi, %,-,_ gibi karakterler...
 
-                // lockout : Kullanıcı hesabının klilitlenip kilitlenmemsi ile ilgili.
-                options.Lockout.MaxFailedAccessAttempts = 5;    // yanlış parolayı 5 kere girilebilir. Sonra hesap kilitlenir.
-                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5); // Hesap kilitlendikten 5 dakika sonra kullanıcı giriş yapmayı deneyebilir.
+                // lockout : KullanÃ½cÃ½ hesabÃ½nÃ½n klilitlenip kilitlenmemsi ile ilgili.
+                options.Lockout.MaxFailedAccessAttempts = 5;    // yanlÃ½Ã¾ parolayÃ½ 5 kere girilebilir. Sonra hesap kilitlenir.
+                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5); // Hesap kilitlendikten 5 dakika sonra kullanÃ½cÃ½ giriÃ¾ yapmayÃ½ deneyebilir.
 
                 //User
-                options.User.RequireUniqueEmail = true;   // her kullanıcı tek bir email adresi ile sisteme girebilir. Yani uniq email kullanılır. Aynı email ile 2 hesap açılamaz.
-                options.SignIn.RequireConfirmedEmail = false; // true olursa kullanıcı üye olur fakat email'ini mutlaka onaylaması gerekir. false olursa üye olup hemen sisteme girebilir.
-                options.SignIn.RequireConfirmedPhoneNumber = false; // True olursa telefon bilgisi için onay ister
+                options.User.RequireUniqueEmail = true;   // her kullanÃ½cÃ½ tek bir email adresi ile sisteme girebilir. Yani uniq email kullanÃ½lÃ½r. AynÃ½ email ile 2 hesap aÃ§Ã½lamaz.
+                options.SignIn.RequireConfirmedEmail = false; // true olursa kullanÃ½cÃ½ Ã¼ye olur fakat email'ini mutlaka onaylamasÃ½ gerekir. false olursa Ã¼ye olup hemen sisteme girebilir.
+                options.SignIn.RequireConfirmedPhoneNumber = false; // True olursa telefon bilgisi iÃ§in onay ister
 
             });
 
-            // 4-1: Cookie ayarları: Cookie (Çerez): Kullanıcının tarayıcısına bırakılan bir bilgi diyebiliriz kısaca. 
+            // 4-1: Cookie ayarlarÃ½: Cookie (Ã‡erez): KullanÃ½cÃ½nÃ½n tarayÃ½cÃ½sÃ½na bÃ½rakÃ½lan bir bilgi diyebiliriz kÃ½saca. 
             builder.Services.ConfigureApplicationCookie(options =>
             {
-                options.LoginPath = "/Account/Login";   // sisteme login olmadıysak bizi login sayfasına yönlendiriyor. login olduysak da bize eşsiz bir sayı üretiyor.. Bu sayıyı server tarafında session'da tutuluyor, Cilent tarafında ise cookie içinde tutluyor.. Kullanıcı bir işlem yaptıktan sonra belirli bir süre sonunda bu bilgi siliniyor. Belirtilen özelliklere göre, bu veri belirtilen süre içinde tekrar bir işlem yapılırsa, tekrar login olmamıza gerek kalmıyor. Fakat süre bittikten sonra tekrar login olmamız gerekiyor.
-                options.LogoutPath = "/Account/Logout";  //Çıkış işlemi yaptığımda cookie tarayıcıdan silinecek Ve tekrar bir işlem yapmak istediğimde login sayfasına yönlendirileceğim.
-                options.AccessDeniedPath = "/Account/Accessdenied"; // Yetkisiz işlem yapıldığında çalışacak olan Action.. Örneğin sıradan bir kullanıcı Admin ile ilgili bir sayfaya ulaşmaya çalıştığında çalışacak.
+                options.LoginPath = "/Account/Login";   // sisteme login olmadÃ½ysak bizi login sayfasÃ½na yÃ¶nlendiriyor. login olduysak da bize eÃ¾siz bir sayÃ½ Ã¼retiyor.. Bu sayÃ½yÃ½ server tarafÃ½nda session'da tutuluyor, Cilent tarafÃ½nda ise cookie iÃ§inde tutluyor.. KullanÃ½cÃ½ bir iÃ¾lem yaptÃ½ktan sonra belirli bir sÃ¼re sonunda bu bilgi siliniyor. Belirtilen Ã¶zelliklere gÃ¶re, bu veri belirtilen sÃ¼re iÃ§inde tekrar bir iÃ¾lem yapÃ½lÃ½rsa, tekrar login olmamÃ½za gerek kalmÃ½yor. Fakat sÃ¼re bittikten sonra tekrar login olmamÃ½z gerekiyor.
+                options.LogoutPath = "/Account/Logout";  //Ã‡Ã½kÃ½Ã¾ iÃ¾lemi yaptÃ½Ã°Ã½mda cookie tarayÃ½cÃ½dan silinecek Ve tekrar bir iÃ¾lem yapmak istediÃ°imde login sayfasÃ½na yÃ¶nlendirileceÃ°im.
+                options.AccessDeniedPath = "/Account/Accessdenied"; // Yetkisiz iÃ¾lem yapÃ½ldÃ½Ã°Ã½nda Ã§alÃ½Ã¾acak olan Action.. Ã–rneÃ°in sÃ½radan bir kullanÃ½cÃ½ Admin ile ilgili bir sayfaya ulaÃ¾maya Ã§alÃ½Ã¾tÃ½Ã°Ã½nda Ã§alÃ½Ã¾acak.
 
-                options.SlidingExpiration = true; // Örneğin sisteme girdim işlem yaptım ve bekledim. varsayılan değer 20dakika. 20dakikadan sonra cookie'de bu bilgi silenecek. Eğer 20 dakika içinde tekrardan bir işlem yaparsam bu süre tekrardan 20 dakika olarak ayarlanacak. False olursa login olduktan sonra 20 dakika sonunda cookie silinecektir.
-                options.ExpireTimeSpan = TimeSpan.FromMinutes(300); // default süresi 20dakika..
+                options.SlidingExpiration = true; // Ã–rneÃ°in sisteme girdim iÃ¾lem yaptÃ½m ve bekledim. varsayÃ½lan deÃ°er 20dakika. 20dakikadan sonra cookie'de bu bilgi silenecek. EÃ°er 20 dakika iÃ§inde tekrardan bir iÃ¾lem yaparsam bu sÃ¼re tekrardan 20 dakika olarak ayarlanacak. False olursa login olduktan sonra 20 dakika sonunda cookie silinecektir.
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(300); // default sÃ¼resi 20dakika..
 
                 options.Cookie = new CookieBuilder
                 { HttpOnly = true, Name = ".Elma.Security.Cookie" };
-                // HttpOnly = true sadece http ile istek geldiğinde ulaşılabilir olsun diyoruz.
-                // Name propertry'si ile de Cookie'ye özel bir isim verebiliyoruz.
+                // HttpOnly = true sadece http ile istek geldiÃ°inde ulaÃ¾Ã½labilir olsun diyoruz.
+                // Name propertry'si ile de Cookie'ye Ã¶zel bir isim verebiliyoruz.
             });
 
             // IoC Container
@@ -71,7 +71,7 @@ namespace ElmaProjesi
             builder.Services.AddScoped<IEmailSender, EmailSender>(x =>
             new EmailSender("smtp.office365.com", 587, true, "deneme1246435@hotmail.com", "d1246435*")
             );
-
+          
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

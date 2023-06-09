@@ -1,5 +1,6 @@
 ﻿using ElmaProjesi.DataAccessLayer.Abstract;
 using ElmaProjesi.EntityLayer;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,21 @@ namespace ElmaProjesi.DataAccessLayer.Concrete
         public SubCategory GetByIdWithService(int subCategoryId)
         {
             throw new NotImplementedException();
+        }
+        public List<SubCategory> GetBySubCategoriesByCategoryUrl(string category)
+        {
+            using (var context = new ElmaContext())
+            {
+
+
+                Category cat = context.Categories
+                    .Where(y => y.Url == category)
+                    .Include(x => x.SubCategories)
+                    .FirstOrDefault();
+
+                var lists = cat.SubCategories;
+                return lists;
+            }
         }
     }
 }

@@ -8,18 +8,18 @@
         </button>
         <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="navbar-brand" asp-controller="Home" asp-action="Index"> 
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index">
                     <img src="~/images/penguinicon.svg" width="30" height="30" alt="Penguen Icon">
                     Penguen
                 </a>
-                <a class="nav-link" asp-controller="Category" asp-action="Cleaning">TEMİZLİK</a>
-                <a class="nav-link" asp-controller="Category" asp-action="Renovation">TADİLAT</a>
-                <a class="nav-link" asp-controller="Category" asp-action="Transportation">NAKLİYAT</a>
-                <a class="nav-link" asp-controller="Category" asp-action="Repair">TAMİR</a>
-                <a class="nav-link" asp-controller="Category" asp-action="PrivateLesson">ÖZEL DERS</a>
-                <a class="nav-link" asp-controller="Category" asp-action="Health">SAĞLIK</a>
-                <a class="nav-link" asp-controller="Category" asp-action="Organization">ORGANİZASYON</a>
-                <a class="nav-link" asp-controller="Category" asp-action="Index">DİĞER</a>
+                <a class="nav-link" asp-controller="Home" asp-action="List" asp-route-category="temizlik">TEMİZLİK</a>
+                <a class="nav-link" asp-controller="Home" asp-action="List" asp-route-category="tadilat">TADİLAT</a>
+                <a class="nav-link" asp-controller="Home" asp-action="List" asp-route-category="nakliyat">NAKLİYAT</a>
+                <a class="nav-link" asp-controller="Home" asp-action="List" asp-route-category="tamir">TAMİR</a>
+                <a class="nav-link" asp-controller="Home" asp-action="List" asp-route-category="ozel-ders">ÖZEL DERS</a>
+                <a class="nav-link" asp-controller="Home" asp-action="List" asp-route-category="saglik">SAĞLIK</a>
+                <a class="nav-link" asp-controller="Home" asp-action="List" asp-route-category="organizasyon">ORGANİZASYON</a>
+                <a class="nav-link" asp-controller="Home" asp-action="List" asp-route-category="diger">DİĞER</a>
                 <a class="nav-link btn btn-outline-primary me-1" href="#">YARDIM</a>
                 <a class="nav-link btn btn-outline-success me-1" asp-controller="Home" asp-action="GiveService">HİZMET VER</a>
                 <a class="nav-link btn btn-outline-primary me-1" href="#">GİRİŞ</a>
