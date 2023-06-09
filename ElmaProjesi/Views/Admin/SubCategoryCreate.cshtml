@@ -1,4 +1,4 @@
-﻿@model ElmaProjesi.EntityLayer.Category
+﻿@model SubCategoryModel
 
 
 @{
@@ -14,19 +14,19 @@
             <img style="height:70px; width:70px" src="/images/Elma.jpg" alt="" />
 
         </a>
-     
+
     </div>
 </nav>
 
 <h1>Admin</h1>
 
-<h4>Kategori Ekle</h4>
+<h4>Alt Kategori Ekle</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Admin">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            
+        <form asp-controller="Admin" asp-action="SubCategoryCreate">
+            <div asp-validation-summary="All" class="text-danger"></div>
+
             <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
                 <input asp-for="Name" class="form-control" />
@@ -50,9 +50,11 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="SubCategoryList">Back to List</a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

@@ -17,7 +17,7 @@ namespace ElmaProjesi
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-            builder.Services.AddDbContext<ApplicationContext>(option => option.UseSqlServer("Server=203-Semih\\na;Database=ElmaProject;Integrated Security=true"));
+            builder.Services.AddDbContext<ApplicationContext>(option => option.UseSqlServer("Server=DESKTOP-TUMHS1A\\NA;Database=ElmaProject;Integrated Security=true"));
             builder.Services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<ApplicationContext>().AddDefaultTokenProviders();
 
             builder.Services.Configure<IdentityOptions>(options =>
@@ -98,14 +98,14 @@ namespace ElmaProjesi
 
             app.MapControllerRoute(
                 name: "admin",
-                pattern: "admin",
-                defaults: new { controller = "Admin", action = "Admin" }
+                pattern: "admin/addcategory",
+                defaults: new { controller = "Admin", action = "CategoryCreate" }
                 );
 
             app.MapControllerRoute(
                 name: "admin",
-                pattern: "admin",
-                defaults: new { controller = "Admin", action = "AdminCategoryList" }
+                pattern: "admin/categories",
+                defaults: new { controller = "Admin", action = "CategoryList" }
                 );
 
             app.MapControllerRoute(

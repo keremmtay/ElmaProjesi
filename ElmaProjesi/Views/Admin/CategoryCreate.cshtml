@@ -1,0 +1,58 @@
+﻿@model CategoryModel
+
+
+@{
+    Layout = "_LayoutAdmin";
+}
+
+
+
+
+<nav class="navbar">
+    <div class="container margin:1px">
+        <a class="navbar">
+            <img style="height:70px; width:70px" src="/images/Elma.jpg" alt="" />
+
+        </a>
+     
+    </div>
+</nav>
+
+<h1>Admin</h1>
+
+<h4>Kategori Ekle</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-controller="Admin" asp-action="CategoryCreate">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Url" class="control-label"></label>
+                <input asp-for="Url" class="form-control" />
+                <span asp-validation-for="Url" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageUrl" class="control-label"></label>
+                <input asp-for="ImageUrl" class="form-control" />
+                <span asp-validation-for="ImageUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="CategoryList">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
