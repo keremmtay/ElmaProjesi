@@ -61,21 +61,21 @@ namespace ElmaProjesi
 
 
             app.MapControllerRoute(
-    name: "admin",
-    pattern: "admin",
-    defaults: new { controller = "Admin", action = "Admin" }
-    );
+                name: "admin",
+                pattern: "admin",
+                defaults: new { controller = "Admin", action = "Admin" }
+                );
 
             app.MapControllerRoute(
-   name: "admin",
-   pattern: "admin",
-   defaults: new { controller = "Admin", action = "AdminCategoryList" }
-   );
+                name: "admin",
+                pattern: "admin",
+                defaults: new { controller = "Admin", action = "AdminCategoryList" }
+                );
 
             app.MapControllerRoute(
                 name: "categories",
                 pattern: "/categories",
-                defaults: new {controller = "Category", action = "Index"}
+                defaults: new { controller = "Category", action = "Index" }
                 );
 
             app.MapControllerRoute(
